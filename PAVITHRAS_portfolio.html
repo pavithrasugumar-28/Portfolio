@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pavithra Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* --- GLOBAL SETTINGS --- */
+    body {
+      margin: 0;
+      /* CREAM BACKGROUND */
+      background-color: #FAFAF0; 
+      /* BLACK TEXT */
+      color: #000000;
+      /* Original Font for content */
+      font-family: 'Courier New', monospace; 
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* --- MODERN HEADER & NAVIGATION --- */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(250, 250, 240, 0.9); /* Cream with transparency */
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .logo {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2rem;
+      color: #000000;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-left: 30px;
+    }
+
+    nav ul li a {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #333; /* Dark Grey */
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #000; /* Black on hover */
+      font-weight: 600;
+    }
+
+    /* --- MODERN HERO SECTION --- */
+    .hero {
+      height: 80vh; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      animation: fadeIn 1.5s ease-in-out;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5rem;
+      margin: 0 0 10px 0;
+      color: #000000;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #333;
+      margin-top: 10px;
+      font-weight: 300;
+    }
+
+    .hero-btn {
+      margin-top: 30px;
+      padding: 12px 30px;
+      background-color: #000000;
+      color: #FAFAF0; /* Cream text */
+      border-radius: 30px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s, background-color 0.3s;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .hero-btn:hover {
+      background-color: #333; /* Dark Grey hover */
+      transform: translateY(-3px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- SECTION TITLES --- */
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #000000;
+      border-bottom: 1px solid #000000; /* Solid Black line */
+      padding-bottom: 10px;
+      text-align: left;
+    }
+
+    /* --- ABOUT & PROJECTS (Courier New) --- */
+    #about p {
+      font-size: 1rem;
+      color: #111;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 20px;
+      border: 1px solid #e0e0e0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      border-color: #000; /* Black border on hover */
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+      font-size: 1.3rem;
+      color: #000000;
+      font-family: 'Courier New', monospace;
+      font-weight: bold;
+    }
+
+    .project-card p {
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    .tag {
+      display: inline-block;
+      background-color: #000000; /* Black Tag */
+      color: #FAFAF0; /* Cream Text */
+      padding: 4px 8px;
+      margin: 5px 5px 0 0;
+      border-radius: 12px;
+      font-size: 12px;
+      font-family: 'Courier New', monospace;
+    }
+
+    /* --- SKILLS SECTION (Poppins) --- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .skill-item {
+      margin-bottom: 20px;
+    }
+
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: #000;
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      background-color: #e0e0e0; /* Light Grey */
+      border-radius: 10px;
+      height: 10px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      border-radius: 10px;
+      background: #000000; /* Solid Black Bars */
+      width: 0;
+      animation: fillBar 1.5s ease-out forwards;
+    }
+
+    @keyframes fillBar {
+      to { width: var(--target-width); }
+    }
+
+    /* --- CONTACT SECTION (Black Background) --- */
+    .contact-container {
+      text-align: center;
+      background: #000000; /* Solid Black */
+      color: #FAFAF0; /* Cream Text */
+      padding: 50px 20px;
+      border-radius: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .contact-container h2 {
+      color: #FAFAF0;
+      border-bottom: 1px solid #444;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .social-icon {
+      font-size: 2rem;
+      color: #FAFAF0; /* Cream Icons */
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .social-icon:hover {
+      color: #ccc; /* Grey on hover */
+      transform: scale(1.2);
+    }
+
+    .email-link {
+      font-size: 1.2rem;
+      color: #FAFAF0;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 20px;
+    }
+    
+    .contact-text {
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      background-color: #111; /* Almost Black */
+      font-size: 0.9rem;
+      color: #FAFAF0; /* Cream Text */
+      font-family: 'Courier New', monospace;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">Pavithra</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Pavithra Sugumar</h1>
+      <p>Tech Enthusiast | Creative Soul | Computer Science Student</p>
+      <p style="font-size: 1rem; color: #555; font-family: 'Dancing Script', cursive; font-size: 1.5rem;">Blending elegance and intelligence.</p>
+      <a href="#projects" class="hero-btn">View My Work</a>
+    </div>
+  </section>
+
+  <section id="about" class="container">
+    <h2>About Me</h2>
+    <p>Welcome to my corner of the internet. I’m Pavithra, a tech enthusiast and creative soul blending elegance and intelligence through code and design. As a curious and ambitious Computer Science student, I am fueled by the desire to push boundaries and explore new possibilities through technology.
+      <br><br>
+      I believe in learning by doing, whether it's experimenting with emerging tech, diving into complex algorithms, or tinkering with new programming languages. Beyond the classroom, you’ll find me participating in hackathons, contributing to open-source projects, and working on side projects that stretch my creativity.
+      <br><br>
+      I'm trying to make my fun and head-turning ideas into reality. I'm still a work in progress, but I’m willing to work hard to achieve my goals.
+    </p>
+  </section>
+
+  <section id="projects" class="container">
+    <h2>Projects</h2>
+    <div class="project-grid">
+
+      <div class="project-card">
+        <h3>Temperature Converter</h3>
+        <p>A clean web app that converts temperatures between Celsius, Kelvin, and Fahrenheit.</p>
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+      </div>
+
+      <div class="project-card">
+        <h3>Vinavi Chatbot</h3>
+        <p>A charming Tamil chatbot that understands Thanglish and regional slang. Built with love 💬</p>
+        <span class="tag">Python</span>
+        <span class="tag">NLP</span>
+        <span class="tag">Dialogflow</span>
+      </div>
+
+      <div class="project-card">
+        <h3>Library System (C++)</h3>
+        <p>A console-based C++ program to organize and access books based on requirements.</p>
+        <span class="tag">C++</span>
+        <span class="tag">OOP</span>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="skills" class="container">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      
+      <div>
+        <div class="skill-item">
+          <div class="skill-info"><span>HTML</span><span>90%</span></div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="--target-width: 90%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info"><span>CSS</span><span>80%</span></div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="--target-width: 80%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info"><span>JavaScript</span><span>65%</span></div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="--target-width: 65%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info"><span>Python</span><span>60%</span></div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="--target-width: 60%"></div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="skill-item">
+          <div class="skill-info"><span>Power BI</span><span>90%</span></div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="--target-width: 90%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info"><span>RAG AI</span><span>80%</span></div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="--target-width: 80%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info"><span>C++</span><span>65%</span></div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="--target-width: 65%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info"><span>Java</span><span>60%</span></div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="--target-width: 60%"></div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact" class="container">
+    <div class="contact-container">
+      <h2>Get In Touch</h2>
+      <p class="contact-text">I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+      
+      <a href="mailto:pavithrasugumar28@gmail.com" class="email-link">pavithrasugumar28@gmail.com</a>
+
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/pavithrasugumar" target="_blank" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/pavithrasugumar-28" target="_blank" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:pavithrasugumar28@gmail.com" class="social-icon" title="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Pavithra Sugumar</p>
+  </footer>
+</body>
+</html>
